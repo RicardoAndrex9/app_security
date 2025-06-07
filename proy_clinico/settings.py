@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = 'django-insecure-ic81eu1==6a3row$0apcex_-1%ozqnxqzut3pj!@lk*e3x%zxc
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application de djang
 INSTALLED_APPS = [
@@ -40,10 +38,10 @@ INSTALLED_APPS = [
 ]
 # Aplicaciones de terceros
 THIRD_PARTY_APPS = [
-    'django_extensions', 
-    'tailwind', 
+    'django_extensions',
+    'tailwind',
     'theme',
-    'django_browser_reload', 
+    'django_browser_reload',
 
 ]
 # Aplicaciones propias
@@ -55,7 +53,7 @@ INSTALLED_APPS = INSTALLED_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 TAILWIND_APP_NAME = 'theme'
 
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd" 
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,7 +71,7 @@ ROOT_URLCONF = 'proy_clinico.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')], # carpeta fisica de templates
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # carpeta fisica de templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,7 +84,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'proy_clinico.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -102,9 +99,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'medicos',
         'USER': 'postgres',
-        'PASSWORD': '123',
+        'PASSWORD': 'Rasz9defebrero',
         'HOST': 'localhost',  # o la IP del servidor de base de datos
-        'PORT': '5432',        # puerto por defecto de PostgreSQL
+        'PORT': '5432',  # puerto por defecto de PostgreSQL
     }
 }
 # Password validation
@@ -125,7 +122,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -137,20 +133,19 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)#carpeta fisica de archivos estaticos
-MEDIA_ROOT = os.path.join(BASE_DIR,'media') # carpeta fisica de archivos de Imagenes
-MEDIA_URL = '/media/' # url de imagenes
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # carpeta fisica de archivos estaticos
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # carpeta fisica de archivos de Imagenes
+MEDIA_URL = '/media/'  # url de imagenes
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 AUTH_USER_MODEL = 'security.User'
 LOGIN_URL = '/auth/signin'
-#SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+# SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 # SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
