@@ -2,59 +2,59 @@
 {% load static %}
 {% block content %}
 <title>{% block title %} {{ title1 }} {% endblock title %}</title>
-<div class="bg-slate-100 dark:bg-principal p-4 relative overflow-hidden">
+<div class="relative overflow-hidden bg-slate-100 p-4 dark:bg-principal">
     <div class="absolute inset-0 bg-center blur-[106px]"></div>
     <div class="relative">
-        <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse text-center justify-center " data-aos="fade-up">
-            <img src="{% static 'img/iguana_corporation.png' %}" class="w-12 h-12" alt="Flowbite Logo" />
-            <span class="self-center whitespace-nowrap dark:text-blue-300 font-extrabold">Iguanas Corporation</span>
+        <a href="/" class="mb-4 flex items-center justify-center text-center sm:mb-0 space-x-3 rtl:space-x-reverse" data-aos="fade-up">
+            <img src="{% static 'img/iguana_corporation.png' %}" class="h-12 w-12" alt="Flowbite Logo" />
+            <span class="self-center whitespace-nowrap font-extrabold dark:text-blue-300">Iguanas Corporation</span>
         </a>
-        <section class="p-4 my-4 mx-auto max-w-4xl rounded-3xl bg-white dark:bg-secundario" data-aos="fade-up" data-aos-delay="200">
-            <h1 class="text-4xl text-center mt-6 font-Pacifico dark:text-blue-300 my-2">
+        <section class="mx-auto my-4 max-w-4xl rounded-3xl bg-white p-4 dark:bg-secundario" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="my-2 mt-6 text-center text-4xl font-Pacifico dark:text-blue-300">
                 {{ title2 }}
             </h1>
-            <p class="text-center my-6 font-Tiny5 text-2xl dark:text-gray-400 uppercase">¡Únete a nuestra comunidad!</p>
-            <div class="text-center my-4" data-aos="fade-right" data-aos-delay="200">
-                <img src="{% static 'img/register/signup.jpg' %}" class="block w-20 md:w-64 lg:w-64 mx-auto rounded-full" alt="Signin">
+            <p class="my-6 text-center text-2xl uppercase font-Tiny5 dark:text-gray-400">¡Únete a nuestra comunidad!</p>
+            <div class="my-4 text-center" data-aos="fade-right" data-aos-delay="200">
+                <img src="{% static 'img/register/signup.jpg' %}" class="mx-auto block w-20 rounded-full md:w-64 lg:w-64" alt="Signin">
             </div>
-            <div class="flex justify-center items-center">
-                <form method="POST" enctype="multipart/form-data" class="w-full max-w-lg z-20">
+            <div class="flex items-center justify-center">
+                <form method="POST" enctype="multipart/form-data" class="z-20 w-full max-w-lg">
                     {% csrf_token %}
                     <!-- Datos de Usuario -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div>
                             <div class="mb-5">
-                                <label for="{{ form.username.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg z-20">{{ form.username.label }}</label>
-                                <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_username" name="username" />
+                                <label for="{{ form.username.id_for_label }}" class="z-20 text-lg font-black uppercase dark:text-blue-300">{{ form.username.label }}</label>
+                                <input type="text" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_username" name="username" />
                             </div>
                             <div class="mb-5">
-                                <label for="{{ form.first_name.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg z-20">{{ form.first_name.label }}</label>
-                                <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_first_name" name="first_name" />
+                                <label for="{{ form.first_name.id_for_label }}" class="z-20 text-lg font-black uppercase dark:text-blue-300">{{ form.first_name.label }}</label>
+                                <input type="text" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_first_name" name="first_name" />
                             </div>
                         </div>
                         <div>
                             <div class="mb-5">
-                                <label for="{{ form.dni.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg z-20">{{ form.dni.label }}</label>
-                                <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_dni" name="dni" />
+                                <label for="{{ form.dni.id_for_label }}" class="z-20 text-lg font-black uppercase dark:text-blue-300">{{ form.dni.label }}</label>
+                                <input type="text" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_dni" name="dni" />
                             </div>
                             <div class="mb-5">
-                                <label for="{{ form.last_name.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg z-20">{{ form.last_name.label }}</label>
-                                <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_last_name" name="last_name" />
+                                <label for="{{ form.last_name.id_for_label }}" class="z-20 text-lg font-black uppercase dark:text-blue-300">{{ form.last_name.label }}</label>
+                                <input type="text" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_last_name" name="last_name" />
                             </div>
                         </div>
                     </div>
                     <!-- Información Adicional -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                         <div>
                             <div class="mb-5">
-                                <label for="{{ form.celular.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg z-20">{{ form.celular.label }}</label>
-                                <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_celular" name="celular" />
+                                <label for="{{ form.celular.id_for_label }}" class="z-20 text-lg font-black uppercase dark:text-blue-300">{{ form.celular.label }}</label>
+                                <input type="text" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_celular" name="celular" />
                             </div>
                         </div>
                         <div>
                             <div class="mb-5">
-                                <label for="{{ form.correo.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg z-20">{{ form.correo.label }}</label>
-                                <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_correo" name="correo" />
+                                <label for="{{ form.correo.id_for_label }}" class="z-20 text-lg font-black uppercase dark:text-blue-300">{{ form.correo.label }}</label>
+                                <input type="text" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_correo" name="correo" />
                             </div>
                         </div>
                     </div>
@@ -63,25 +63,25 @@
                         <div class="flex justify-center">
                             <div>
                                 <div class="mb-5">
-                                    <label for="{{ form.password1.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg">{{ form.password1.label }}</label>
-                                    <input type="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_password1" name="password1" />
+                                    <label for="{{ form.password1.id_for_label }}" class="text-lg font-black uppercase dark:text-blue-300">{{ form.password1.label }}</label>
+                                    <input type="password" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_password1" name="password1" />
                                 </div>
                                 <div class="mb-5">
-                                    <label for="{{ form.password2.id_for_label }}" class="dark:text-blue-300 font-black uppercase text-lg">{{ form.password2.label }}</label>
-                                    <input type="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-12 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_password2" name="password2" />
+                                    <label for="{{ form.password2.id_for_label }}" class="text-lg font-black uppercase dark:text-blue-300">{{ form.password2.label }}</label>
+                                    <input type="password" class="block w-full rounded-lg border border-gray-300 bg-gray-50 pr-12 text-gray-900 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-principal dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="id_password2" name="password2" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center text-center mb-5">
-                        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-full mr-2 flex items-center">
+                    <div class="mb-5 flex flex-col items-center text-center">
+                        <button type="submit" class="mr-2 flex items-center rounded-full bg-blue-700 px-4 py-2 text-white hover:bg-blue-800">
                             Registrarse
                         </button>
                     </div>
                 </form>
             </div>
-            <p class="dark:text-gray-400 text-center mt-3 z-10">
-                ¿Ya tienes una cuenta? <a href="{% url 'security:signin' %}" class="text-blue-600 hover:underline dark:text-blue-300 font-Tiny5 uppercase">Inicia Sesión</a>
+            <p class="z-10 mt-3 text-center dark:text-gray-400">
+                ¿Ya tienes una cuenta? <a href="{% url 'security:signin' %}" class="uppercase text-blue-600 hover:underline dark:text-blue-300 font-Tiny5">Inicia Sesión</a>
             </p>
             <!-- <svg viewBox="0 0 1024 1024"
                 class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
